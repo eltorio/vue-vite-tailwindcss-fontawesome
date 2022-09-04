@@ -10,6 +10,14 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 - npm run build : compile, optimize and minify to dist/ directory
 - npm run preview : serve dist/ directory to http://localhost:4173
 
+## Howto
+
+- Simply copy this repo with "Use this template" or fork it
+- Clone your new repo
+- issue "npm i" in your local clone 
+- issue "npm run dev"
+- browser http://localhost:5173
+
 ## Tailwind css
 
 - Tailwind is embedded with my default theme in tailwindcss.config.cjs
