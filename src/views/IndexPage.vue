@@ -6,7 +6,7 @@
         <h1 class="text-6xl text-watermelon-600 text-center">Vue3 template</h1>
         <h3 class="text-xl text-watermelon-300 text-center">with</h3>
         <h1 class="text-6xl text-blue-700 text-center">
-          Vite <i class="fa-brands fa-css3"></i>
+          Vite+Vue <i class="fab fa-vuejs"></i>
         </h1>
         <h1 class="text-6xl text-blue-700 text-center">
           Tailwindcss 3 <i class="fab fa-css3"></i>

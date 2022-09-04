@@ -1,11 +1,11 @@
 {
-  "name": "template-vitejs-vue3-tailwindcss-fontawesom",
+  "name": "template-vitejs-vue3-tailwindcss-fontawesome",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node --loader ts-node/esm src/utilities/fontawesomeminify.ts",
+    "build": "vite build && node --loader ts-node/esm src/utilities/fontawesomeminify.ts && gulp licenses",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -22,6 +22,8 @@
     "@vitejs/plugin-vue": "^3.0.3",
     "autoprefixer": "^10.4.8",
     "fontmin": "^0.9.9",
+    "gulp": "^4.0.2",
+    "gulp-append-prepend": "^1.0.9",
     "npm-check-updates": "^16.0.6",
     "postcss": "^8.4.16",
     "postcss-purgefonts": "^1.0.2",
