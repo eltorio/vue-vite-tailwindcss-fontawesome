@@ -1,3 +1,11 @@
+<!--
+=========================================================
+* © 2022 Ronan LE MEILLAT for %CLIENT_NAME%
+=========================================================
+This website use:
+- Vite, Vue3, FontAwesome 6, TailwindCss 3
+- And many others
+-->
 <template>
     <div
       class="min-w-screen min-h-screen bg-blue-100 flex items-center overflow-hidden relative flex-col"

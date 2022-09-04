@@ -1,3 +1,11 @@
+/*!
+=========================================================
+* © 2022 Ronan LE MEILLAT for %CLIENT_NAME%
+=========================================================
+This website use:
+- Vite, Vue3, FontAwesome 6, TailwindCss 3
+- And many others
+*/
 // basic logic for minifying fontawesome fonts
 // idea is to normally build, next extract all unicode character declaration from built css (after purgecss)
 // and pass this to fontmin
