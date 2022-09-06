@@ -6,11 +6,11 @@ This website use:
 - Vite, Vue3, FontAwesome 6, TailwindCss 3
 - And many others
 */
-const tailwindcss = require('tailwindcss')
-const autoprefixer = require('autoprefixer')
-const purgecss = require('@fullhuman/postcss-purgecss')
+import tailwindcss from 'tailwindcss'
+import autoprefixer from 'autoprefixer'
+import purgecss from '@fullhuman/postcss-purgecss'
 
-module.exports = {
+export default {
   plugins: [
     tailwindcss,
     autoprefixer,
