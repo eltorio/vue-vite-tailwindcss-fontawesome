@@ -6,6 +6,7 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 
 - @ path is defined as ./src
 - ~ path is defined as ./node_modules
+- § path is defined as ./fontawesome
 - npm run dev : launch development environment and serve it to http://localhost:5173
 - npm run build : compile, optimize and minify to dist/ directory
 - npm run preview : serve dist/ directory to http://localhost:4173
@@ -28,7 +29,7 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 
 - Fontawesome 6 Free is embedded
 - Please use fas, fal, fab… classes rather thant fa-solid, fa-light… (see @/utilities/fontawesomeminify.ts)
-- When you build your app, @/utilities/fontawesomeminify.ts is run for subsetting roughly all Fontawesome fonts.
+- When you build your app, §/fontawesome/fontawesomeminify.ts is run for subsetting roughly all Fontawesome fonts.
 - The main idea is to scan the produced css files, extract all unicode codes and try to subsetting all fa-*.ttf fonts with this unicode list. When done woff/woff2 are derived from the minifyied Truetype font.
 - It is very usefull if you use a few icon and probably divide by 30 your Fontawesome fonts size. (remove the task in package.json if you don't want)
 
