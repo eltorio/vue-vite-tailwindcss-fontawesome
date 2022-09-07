@@ -12,7 +12,7 @@ module.exports = {
     "./index.html",
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
-  safelist: (process.env.NODE_ENV !== 'development') ? [] : [{ pattern: /.*/ }],
+  // safelist: (process.env.NODE_ENV !== 'development') ? [] : [{ pattern: /.*/ }], // DON'T DO THAT FOR NORMAL DEVELOPMENT - ONLY FOR LIVE MODIFICATIONS IN DEVTOOLS
   theme: {
     extend: {
       colors: {
