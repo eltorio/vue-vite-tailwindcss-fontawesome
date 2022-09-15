@@ -16,6 +16,7 @@ import { Plugin, UserConfig, ResolvedConfig } from 'vite';
 import colors from 'picocolors'
 
 const FA_FONT_REGEX = /fa-.*\.(eot|ttf|svg|woff|woff2)(\?.+)?$/
+const FA_TTF_FILTER = "fa-*.ttf"
 const TTF_REGEX = /fa-.*\.(ttf)(\?.+)?$/
 const TEXT_REGEX = /\.(js|css|html)$/
 const GLYPH_REGEX = /content\s*:[^};]*?('|")(.*?)\s*('|"|;)/g
@@ -143,6 +144,7 @@ interface VitePluginFontawesomeminifyOptions {
   outFontExtension?: string[];
   baseDir?: string;
   glyphWhitelist?: string[];
+  faTTFFontFilter?: string;
 }
 
 export default function vitePluginFontawesomeminify(options: VitePluginFontawesomeminifyOptions = {}): Plugin {
@@ -152,7 +154,8 @@ export default function vitePluginFontawesomeminify(options: VitePluginFontaweso
     outFontExtension = FONTMIN_EXTENSIONS,
     fontRegex = FA_FONT_REGEX,
     baseDir = BASE_DIR,
-    glyphWhitelist = GLYPH_WHITELIST
+    glyphWhitelist = GLYPH_WHITELIST,
+    faTTFFontFilter = FA_TTF_FILTER
   } = options;
 
   let config: ResolvedConfig
@@ -202,7 +205,7 @@ export default function vitePluginFontawesomeminify(options: VitePluginFontaweso
                 text: glyphsAndWhiteList,
                 hinting: true
               }))
-              .src(`${BASE_DIR}/*.ttf`)
+              .src(`${BASE_DIR}/${faTTFFontFilter}`)
               .dest(`${BASE_DIR}/`)
               //.use(Fontmin.ttf2eot())
               .use(Fontmin.ttf2woff({
