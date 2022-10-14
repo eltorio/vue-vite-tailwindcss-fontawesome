@@ -9,7 +9,7 @@ This website use:
 import { createApp } from 'vue'
 import App from '@/App.vue'
 import { createWebHistory, createRouter, RouteRecordRaw } from "vue-router"
-import '@/index.css'
+import '@/index.scss'
 
 const routes = [
     {
