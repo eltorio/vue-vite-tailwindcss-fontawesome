@@ -8,20 +8,26 @@ This website use:
 */
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import fs from "fs";
 import path from 'path'
 import vitePluginFontawesomeminify from '@highcanfly-club/fontawesome'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    vue(),
-    vitePluginFontawesomeminify()
-  ],
+  plugins: [vue(), vitePluginFontawesomeminify()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
-      '~': path.resolve(__dirname, './node_modules'),
-      '§': path.resolve(__dirname, './'),
+      "@": path.resolve(__dirname, "./src"),
+      "~": path.resolve(__dirname, "./node_modules"),
+      "§": path.resolve(__dirname, "./"),
     },
-  }
-})
+  },
+  server: {
+    https: fs.existsSync("./localhost.key")
+      ? {
+          key: fs.readFileSync("./localhost.key"),
+          cert: fs.readFileSync("./localhost.pem"),
+        }
+      : false,
+  },
+});
