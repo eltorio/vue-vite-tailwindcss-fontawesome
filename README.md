@@ -31,14 +31,14 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 create a .npmrc with 
 ```
 @highcanfly-club:registry=https://npm.pkg.github.com
-//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
+//npm.pkg.github.com/:_authToken=${NPM_GITHUB_TOKEN}
 ```
 
 - install kit
 request a personal access token at Github. For doing that go to your personal settings and hit "developer settings"
 
 ```sh
-GITHUB_TOKEN=ghp_jX2t6JA_REAL_TOKEN_2c30tMrA0 npm i -D @highcanfly-club/fontawesome @sctg/fontminify
+NPM_GITHUB_TOKEN=ghp_jX2t6JA_REAL_TOKEN_2c30tMrA0 npm i -D @highcanfly-club/fontawesome @sctg/fontminify
 # if you decide to put your token in the .npmrc be sure to exclude it with .gitignore
 ```
 
