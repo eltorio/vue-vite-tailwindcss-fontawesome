@@ -25,13 +25,26 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 - All classes are availables in development environment (usefull for UI debug with devtools)
 - Built css is parsed by Purgecss for removing all unused classes, take a look to postcss.config.cjs 
 
-## Fontawesome 6
+## Fontawesome 6 using private Fontawesome 6 package
 
-- Fontawesome 6 Free is embedded
-- Please use fas, fal, fab… classes rather thant fa-solid, fa-light… (see §/fontawesome/fontawesomeminify.ts)
-- When you build your app, §/fontawesome/fontawesomeminify.ts is run for subsetting roughly all Fontawesome fonts.
-- The main idea is to scan the produced css files, extract all unicode codes and try to subsetting all fa-*.ttf fonts with this unicode list. When done woff/woff2 are derived from the minifyied Truetype font.
-- It is very usefull if you use a few icon and probably divide by 30 your Fontawesome fonts size. (remove the task in package.json if you don't want)
+- use private Fontawesome 6 package 
+create a .npmrc with 
+```
+@highcanfly-club:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
+```
+
+- install kit
+request a personal access token at Github. For doing that go to your personal settings and hit "developer settings"
+
+```sh
+GITHUB_TOKEN=ghp_jX2t6JA_REAL_TOKEN_2c30tMrA0 npm i -D @highcanfly-club/fontawesome @sctg/fontminify
+# if you decide to put your token in the .npmrc be sure to exclude it with .gitignore
+```
+
+Also be sure to request the read permission to the package owner.  
+If you deploy it using a CI/CD workflow external to Github you must request a personal access token and register an environment variable with your token… See [instructions](https://github.com/highcanfly-club/fontawesome/blob/main/README.md)
+
 
 ## Recommended IDE Setup
 
