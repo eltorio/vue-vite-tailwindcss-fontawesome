@@ -12,22 +12,13 @@ This website use:
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-
-export default defineComponent({
-  name: "BasicCard",
-  props: {
-    msg: String,
-  },
-  data() {
-    return {};
-  },
-  methods: {},
-  components: {},
-});
+<script setup lang="ts">
+const props = defineProps<{
+  msg: string
+}>()
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
 </style>

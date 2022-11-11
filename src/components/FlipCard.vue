@@ -12,33 +12,18 @@ This website use:
   </div>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import FlipClock from "@/components/FlipClock.vue";
-import { ref, defineComponent } from "vue";
-
-export default defineComponent({
-  name: "FlipCard",
-  data() {
-    const counter = ref('000000')
-    return {
-      counter,
-    };
-  },
-  mounted() {
-    setInterval(this.updateCounter, 2000);
-  },
-  methods: {
-    zeroPad: function (num:number, places:number) {
-      return String(num).padStart(places, "0");
-    },
-    updateCounter: function () {
-      this.counter = this.zeroPad(Math.floor(Math.random() * 100000), 5);
-    },
-  },
-  components: {
-    FlipClock,
-  },
+import { ref, onMounted } from "vue";
+const counter = ref('000000')
+onMounted(() => {
+  setInterval(updateCounter, 2000);
 })
-
+const zeroPad = (num: number, places: number): string => {
+  return String(num).padStart(places, "0");
+}
+const updateCounter = () => {
+  counter.value = zeroPad(Math.floor(Math.random() * 100000), 5);
+}
 </script>
 

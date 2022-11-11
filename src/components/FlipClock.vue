@@ -14,31 +14,27 @@ This website use:
   </div>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import Tick from "@pqina/flip";
 import "@pqina/flip/dist/flip.min.css";
-import { ref, defineComponent } from "vue";
+import { ref, defineProps, onMounted, onUnmounted, watch } from "vue";
 
-export default defineComponent({
-  name: "Flip",
-  props: {
-    value: {
-      type: String,
-      required: true,
-    },
-  },
-  watch: {
-    value(newValue) {
-      this._tick.value = newValue;
-    },
-  },
-  mounted() {
-    this._tick = Tick.DOM.create(this.$refs.tick, {
-      value: this.$props.value,
-    });
-  },
-  unmounted() {
-    Tick.DOM.destroy(this.$refs.tick);
-  },
-});
+const props = defineProps<{
+  value: string
+}>()
+const tick = ref<HTMLDivElement>(null)
+let _tick: { value: string; } //has many more properties but we use only this one
+
+watch(() => props.value, (newValue) => { _tick.value = newValue })
+
+onMounted(() => {
+  _tick = Tick.DOM.create(tick.value, {
+    value: props.value,
+  });
+})
+
+onUnmounted(() => {
+  Tick.DOM.destroy(tick.value);
+})
+
 </script>

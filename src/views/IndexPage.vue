@@ -33,24 +33,9 @@ This website use:
     </div>
   </template>
   
-  <script lang="ts">
+  <script setup lang="ts">
   import BasicCard from "@/components/BasicCard.vue";
   import FlipCard from "@/components/FlipCard.vue";
-  import { defineComponent } from 'vue'
-  
-  export default defineComponent({
-    // type inference enabled
-    props: {
-    },
-    data() {
-      const version = this.$.appContext.app.version
-      return {
-        version
-      }
-    },
-    components:{
-      BasicCard,
-      FlipCard
-    }
-  })
+  import { getCurrentInstance } from 'vue'
+  const version = getCurrentInstance().appContext.app.version
   </script>
