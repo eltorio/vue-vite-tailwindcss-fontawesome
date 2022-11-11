@@ -9,6 +9,7 @@ This website use:
 import { createApp } from 'vue'
 import App from '@/App.vue'
 import { createWebHistory, createRouter, RouteRecordRaw } from "vue-router"
+import { addJsonLD } from "./config/StructuredLDJson"
 import '@/index.scss'
 
 const routes = [
@@ -38,3 +39,5 @@ const router = createRouter({
 
 createApp(App).use(router)
     .mount('#app')
+
+    addJsonLD();
